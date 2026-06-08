@@ -1,0 +1,28 @@
+namespace Amtgard\IAM\Definitions\ORN;
+
+use Amtgard\IAM\OrkServices;
+use Amtgard\IAM\ORNFormat;
+
+class {{ formatclass }} extends ORNFormat
+{
+
+    public static function serviceFormat(): array
+    {
+        return [
+{% for service in formatservices %}
+            OrkServices::{{ service }},
+{% endfor %}
+        ];
+    }
+
+    public static function getValidResourceMap($resource = null): array {
+        $map = [
+{% for resname, procedures in formatresourcemap %}
+            "{{ resname }}" => [ {% for proc in procedures %}"{{ proc }}"{% if not loop.last %}, {% endif %}{% endfor %} ]{% if not loop.last %},{% endif %}
+
+{% endfor %}
+        ];
+        return $resource ? $map[$resource] : $map;
+    }
+
+}

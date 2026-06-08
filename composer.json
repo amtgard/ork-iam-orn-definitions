@@ -1,0 +1,33 @@
+{
+    "name": "amtgard/ork-iam-orn-definitions",
+    "description": "ORN Definitions for ORK Services",
+    "type": "library",
+    "license": "MIT",
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../ork-iam",
+            "options": {
+                "symlink": true
+            }
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+        "amtgard/ork-iam": "@dev"
+    },
+    "require-dev": {
+        "twig/twig": "^3.21"
+    },
+    "autoload": {
+        "psr-4": {
+            "Amtgard\\IAM\\Definitions\\ORN\\": "src/ORN/"
+        },
+        "files": [
+            "src/register.php"
+        ]
+    },
+    "scripts": {
+        "build": "php bin/buildOrns.php"
+    }
+}

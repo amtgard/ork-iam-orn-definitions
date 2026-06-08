@@ -1,0 +1,17 @@
+namespace Amtgard\IAM\Definitions\ORN;
+
+use Amtgard\IAM\Requirement\Requirement;
+
+class {{ requirementclass }} extends Requirement
+{
+
+    protected function serviceFormat(): array
+    {
+        return {{ formatclass }}::serviceFormat();
+    }
+
+    protected function getResourceMap(string $resource = null): array
+    {
+        return {{ formatclass }}::getValidResourceMap($resource);
+    }
+}

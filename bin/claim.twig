@@ -1,0 +1,17 @@
+namespace Amtgard\IAM\Definitions\ORN;
+
+use Amtgard\IAM\Allowance\Claim;
+
+class {{ claimclass }} extends Claim
+{
+
+    protected function serviceFormat(): array
+    {
+        return {{ formatclass }}::serviceFormat();
+    }
+
+    protected function getResourceMap(string $resource = null): array
+    {
+        return {{ formatclass }}::getValidResourceMap($resource);
+    }
+}
