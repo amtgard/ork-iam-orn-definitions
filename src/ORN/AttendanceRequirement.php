@@ -7,9 +7,9 @@ use Amtgard\IAM\Requirement\Requirement;
 class AttendanceRequirement extends Requirement
 {
 
-    protected function serviceFormat(): array
+    public function ornSegmentSchema(): array
     {
-        return AttendanceFormat::serviceFormat();
+        return AttendanceFormat::ornSegmentSchema();
     }
 
     protected function getResourceMap(string $resource = null): array

@@ -1,16 +1,16 @@
 namespace Amtgard\IAM\Definitions\ORN;
 
-use Amtgard\IAM\OrkServices;
+use Amtgard\IAM\Catalog\ServiceCatalog;
 use Amtgard\IAM\ORNFormat;
 
 class {{ formatclass }} extends ORNFormat
 {
 
-    public static function serviceFormat(): array
+    public static function ornSegmentSchema(): array
     {
         return [
 {% for service in formatservices %}
-            OrkServices::{{ service }},
+            ServiceCatalog::{{ service }},
 {% endfor %}
         ];
     }

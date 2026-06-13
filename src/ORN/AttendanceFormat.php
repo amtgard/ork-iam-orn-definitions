@@ -2,21 +2,21 @@
 
 namespace Amtgard\IAM\Definitions\ORN;
 
-use Amtgard\IAM\OrkServices;
+use Amtgard\IAM\Catalog\ServiceCatalog;
 use Amtgard\IAM\ORNFormat;
 
 class AttendanceFormat extends ORNFormat
 {
 
-    public static function serviceFormat(): array
+    public static function ornSegmentSchema(): array
     {
         return [
-            OrkServices::Configuration,
-            OrkServices::Game,
-            OrkServices::Kingdom,
-            OrkServices::Park,
-            OrkServices::Event,
-            OrkServices::EventInstance,
+            ServiceCatalog::Configuration,
+            ServiceCatalog::Game,
+            ServiceCatalog::Kingdom,
+            ServiceCatalog::Park,
+            ServiceCatalog::Event,
+            ServiceCatalog::EventInstance,
         ];
     }
 

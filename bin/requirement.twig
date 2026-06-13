@@ -5,9 +5,9 @@ use Amtgard\IAM\Requirement\Requirement;
 class {{ requirementclass }} extends Requirement
 {
 
-    protected function serviceFormat(): array
+    public function ornSegmentSchema(): array
     {
-        return {{ formatclass }}::serviceFormat();
+        return {{ formatclass }}::ornSegmentSchema();
     }
 
     protected function getResourceMap(string $resource = null): array

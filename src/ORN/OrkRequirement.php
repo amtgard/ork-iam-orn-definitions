@@ -7,9 +7,9 @@ use Amtgard\IAM\Requirement\Requirement;
 class OrkRequirement extends Requirement
 {
 
-    protected function serviceFormat(): array
+    public function ornSegmentSchema(): array
     {
-        return OrkFormat::serviceFormat();
+        return OrkFormat::ornSegmentSchema();
     }
 
     protected function getResourceMap(string $resource = null): array

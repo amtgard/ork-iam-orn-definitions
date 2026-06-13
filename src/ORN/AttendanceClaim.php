@@ -7,9 +7,9 @@ use Amtgard\IAM\Allowance\Claim;
 class AttendanceClaim extends Claim
 {
 
-    protected function serviceFormat(): array
+    public function ornSegmentSchema(): array
     {
-        return AttendanceFormat::serviceFormat();
+        return AttendanceFormat::ornSegmentSchema();
     }
 
     protected function getResourceMap(string $resource = null): array
